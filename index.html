@@ -1,1 +1,16 @@
-PLACEHOLDER_INDEX
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Looksmaxxing Clicker</title>
+<style>body{margin:0;background:#0d0d12;color:#f0c14b;font-family:system-ui;display:flex;align-items:center;justify-content:center;height:100vh}</style>
+</head><body><p>Загрузка гигачада...</p>
+<script>
+(async()=>{
+  try {
+    let b64='';
+    for(let i=0;i<17;i++){
+      b64+=(await fetch('c/'+i+'.txt').then(r=>r.text())).trim();
+    }
+    const html=new TextDecoder().decode(Uint8Array.from(atob(b64),c=>c.charCodeAt(0)));
+    document.open();document.write(html);document.close();
+  }catch(e){document.body.innerHTML='<p style="color:#e17055">'+e+'</p>';}
+})();
+</script></body></html>
